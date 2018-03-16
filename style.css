@@ -1,0 +1,96 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+
+.main{
+    margin-top: 80px;
+}
+.nav{
+    border-bottom: 1px solid gray;
+    text-align: right;
+    height: 70px;
+    width: 100%;
+    line-height: 70px;
+    background-color: white;
+    position: fixed;
+    top:0;
+
+}
+
+.menu{
+    margin: 0 30px 0 0;
+    z-index: 9999;
+    
+}
+
+.menu a{
+    clear: right;
+    text-decoration: none;
+    color: gray;
+    margin: 0 10px;
+    z-index: 100;
+}
+
+label{
+    display: none;
+    font-size: 25px;
+    line-height: 70px;
+    margin-right: 25px;
+}
+
+#toggle{
+    display: none;
+}
+
+@media screen and (max-width:670px){
+    .menu{
+        margin: 0 15px 0 0;
+    }
+    .menu a{
+        clear: right;
+        font-size: 14px;
+        line-height: 14px;
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    label{
+        display: block;
+        cursor: pointer;
+        width: 25px;
+        float: right;
+    }
+    .menu{
+        text-align: center;
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .5s;
+        z-index: 100;
+        position: fixed;
+        top:70px;
+        left:0;
+    }
+    .menu a{
+        display: block;
+        border-bottom: 1px solid gray;
+        margin: 0;
+        padding: 15px 0;
+        background-color: white;
+        z-index: 100;
+    }
+    
+    #toggle:checked + .menu{
+        visibility: visible;
+        opacity: 1;
+        z-index: 100;
+        position: fixed;
+        top:70px;
+        left:0;
+    } 
+}
